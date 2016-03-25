@@ -3,7 +3,7 @@ $ ->
 
   cfg =
     draggable: true
-    pieceTheme: "assets/chesspieces/alpha/{piece}.png"
+    pieceTheme: "/chesspieces/alpha/{piece}.png"
     showNotation: false
 
     onDragStart: (source, piece, position, orientation) =>
