@@ -25,4 +25,9 @@ class Game
 
     ActionCable.server.broadcast "player_#{opponent}", {action: "make_move", msg: move_string}
   end
+
+  def self.game_over(uuid, data)
+    opponent = opponent_for(uuid)
+    ActionCable.server.broadcast "player_#{opponent}", {action: "game_over", msg: data}
+  end
 end

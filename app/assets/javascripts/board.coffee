@@ -25,10 +25,10 @@ $ ->
         return "snapback"
       else
         App.game.perform("make_move", move)
-
-        if App.chess.game_over()
-          alert("Checkmate cmnr ! Đm, Cheat à????")
-
         App.board.position(App.chess.fen(), false)
+        if App.chess.game_over()
+          msg = App.chess.turn() == "w" ? "White won" : "Black won"
+          alert("You won!")
+          App.game.perform("game_over", msg)
 
   App.board = ChessBoard("chessboard", cfg)

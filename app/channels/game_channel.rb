@@ -13,4 +13,8 @@ class GameChannel < ApplicationCable::Channel
   def make_move(data)
     Game.make_move(uuid, data)
   end
+
+  def game_over(data)
+    Game.game_over(uuid, data)
+  end
 end

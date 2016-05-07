@@ -19,5 +19,9 @@ App.game = App.cable.subscriptions.create "GameChannel",
       when "opponent_forfeits"
         @printMessage("Opponent forfeits. You win!")
 
+      when "game_over"
+        alert(data.msg)
+        @printMessage("Check mate!")
+
   printMessage: (message) ->
     $("#messages").append("<p>#{message}</p>")
