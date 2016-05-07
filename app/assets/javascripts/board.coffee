@@ -20,14 +20,15 @@ $ ->
         to: target
         promotion: "q"
 
-      if App.chess.game_over()
-        alert("Game Over!")
-
       if (move == null)
         # illegal move
         return "snapback"
       else
         App.game.perform("make_move", move)
+
+        if App.chess.game_over()
+          alert("Checkmate cmnr ! Đm, Cheat à????")
+
         App.board.position(App.chess.fen(), false)
 
   App.board = ChessBoard("chessboard", cfg)

@@ -3,6 +3,7 @@ App.game = App.cable.subscriptions.create "GameChannel",
     @printMessage("Waiting for opponent...")
 
   received: (data) ->
+    console.log(data.action)
     switch data.action
       when "game_start"
         App.board.position("start")
