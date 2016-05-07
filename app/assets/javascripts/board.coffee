@@ -29,14 +29,14 @@ $ ->
         if App.chess.game_over()
           msg = ""
           if App.chess.turn() == "w"
-            msg = "White won!"
-          else
             msg = "Black won!"
-          
+          else
+            msg = "White won!"
+
           dtm = { message: msg }
-          
+
           alert("You won!")
-          
+
           App.game.perform("game_over", dtm)
 
   App.board = ChessBoard("chessboard", cfg)
