@@ -7,6 +7,10 @@ $ ->
     showNotation: false
 
     onDragStart: (source, piece, position, orientation) =>
+
+      if App.chess.game_over()
+        alert("Game Over!")
+
       # make sure the player is allowed to pick up the piece
       return !(App.chess.game_over() ||
                (App.chess.turn() == "w" && piece.search(/^b/) != -1) ||
