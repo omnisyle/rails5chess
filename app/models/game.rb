@@ -28,6 +28,6 @@ class Game
 
   def self.game_over(uuid, data)
     opponent = opponent_for(uuid)
-    ActionCable.server.broadcast "player_#{opponent}", {action: "game_over", msg: data}
+    ActionCable.server.broadcast "player_#{opponent}", {action: "game_over", msg: data["message"]}
   end
 end
